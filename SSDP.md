@@ -17,7 +17,6 @@ USN: uuid:f40c2981-7329-40b7-8b04-27f187aecfb8::homebase:bridge
 LOCATION: http://10.0.0.107:10293/upnp/desc.html
 CACHE-CONTROL: max-age=1800
 SERVER: node.js/6.9.1 UPnP/1.1 homebase-ssdp/1.0.0
-
 ```
 
 
