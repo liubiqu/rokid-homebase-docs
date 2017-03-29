@@ -14,6 +14,8 @@ actions:
 }
 ```
 
+**actions** 数据定义参考: [jsonschemalint 在线校验工具](https://jsonschemalint.com/#/version/draft-04/markup/json?gist=a03c0a8cc249d2e69f63d74c4564cad3)
+
 state:
 ```JSON
 {
@@ -22,6 +24,8 @@ state:
   "brightness": 10
 }
 ```
+
+**state** 数据定义参考: [jsonschemalint 在线校验工具](https://jsonschemalint.com/#/version/draft-04/markup/json?gist=09e266c8fba04a88c117fe05e4ab41d6)
 
 ## <span id = "actions">设备能力 actions</span>
 
@@ -124,10 +128,10 @@ state:
 
 ### <span id = "position">位置量 position</span>
 
-- actions 接受值 [ "up"，"down"，"num" ]
-  - "up":
-  - "down":
-  - "num":
+- actions 接受值 [ "up","down","num" ]
+  - "up": 如：窗帘打开一点
+  - "down": 如：窗帘关闭一点
+  - "num": 如：窗帘打开/关闭到百分之几
 
 ```JSON
 { "position": "num" }
@@ -136,7 +140,7 @@ state:
 - state 值
   - {number}
   - 0 到 100 之间十进制数值
-  - 如果不能明确获取到具体数值，可以为空
+  - 如果不能明确获取到具体数值，可以为 null
 
 ```JSON
 { "position": 10 }
@@ -159,7 +163,7 @@ state:
 - state 值
   - {number}
   - 0 到 100 之间十进制数值
-  - 如果不能明确获取到具体数值，可以为空
+  - 如果不能明确获取到具体数值，可以为 null
 
 ```JSON
 { "fanspeed": 10 }
@@ -204,7 +208,7 @@ state:
 - state 值
   - {number}
   - 0 到 100 之间十进制数值
-  - 如果不能明确获取到具体数值，可以为空
+  - 如果不能明确获取到具体数值，可以为 null
 
 ```JSON
 { "volume": 10 }
@@ -225,7 +229,7 @@ state:
 - state 值
   - {number}
   - 正整数
-  - 如果不能明确获取到具体数值，可以为空
+  - 如果不能明确获取到具体数值，可以为 null
 
 ```JSON
 { "channel": 10 }
@@ -247,7 +251,7 @@ state:
 - state 值
   - {number}
   - 0 到 100 之间十进制数值
-  - 如果不能明确获取到具体数值，可以为空
+  - 如果不能明确获取到具体数值，可以为 null
 
 ```JSON
 { "humidity": 30 }
@@ -269,7 +273,7 @@ state:
 - state 值
   - {number}
   - 0 到 100 之间十进制数值
-  - 如果不能明确获取到具体数值，可以为空
+  - 如果不能明确获取到具体数值，可以为 null
 
 ```JSON
 { "temperature": 26 }

@@ -8,8 +8,10 @@
 - {Object} [actions](#actions)
 - {Object} [state](#state)
 - {Boolean} [offline](#offline)
-- {Object} [deviceInfo](#deviceInfo) (Option)
-- {String} [parent](#parent) (Option)
+- {Object} [deviceInfo](#deviceInfo) (Optional)
+- {String} [parent](#parent) (Optional)
+
+**标准化设备** 数据定义参考： [jsonschemalint 在线检查工具](https://jsonschemalint.com/#/version/draft-04/markup/json?gist=f9b8fcb4b8e9e2761978fb9cbde48392)
 
 ### <span id = "deviceId">deviceId</span>
 
