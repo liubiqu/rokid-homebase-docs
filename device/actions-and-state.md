@@ -116,65 +116,177 @@ state:
 
 - state 值
   - {string}
-  - actions 定义能力对应的状态
+  - actions 定义能力对应的一个状态
 
 ```JSON
 { "mode": "auto" }
 ```
 
 ### <span id = "position">位置量 position</span>
-- actions 接受值
-  - [ 'up'， 'down'， 'num' ]
+
+- actions 接受值 [ "up"，"down"，"num" ]
+  - "up":
+  - "down":
+  - "num":
+
+```JSON
+{ "position": "num" }
+```
+
 - state 值
   - {number}
-  - 0 - 100
+  - 0 到 100 之间十进制数值
+  - 如果不能明确获取到具体数值，可以为空
+
+```JSON
+{ "position": 10 }
+```
 
 ### <span id = "fanspeed">风速 fanspeed</span>
-- actions 接受值
-  - [ 'up', 'down', 'max', 'min', 'num' ]
+
+- actions 接受值 [ "up", "down", "max", "min", "switch", "num" ]
+  - "up": 调高，调大
+  - "down": 调低，调小
+  - "max": 调到最高，调到最大
+  - "min": 调到最低， 调到最小
+  - "switch": 切换不同档位
+  - "num": 调到指定数值
+
+```JSON
+{ "fanspeed": ["up", "down", "num"] }
+```
+
 - state 值
   - {number}
-  - 0 - 100
+  - 0 到 100 之间十进制数值
+  - 如果不能明确获取到具体数值，可以为空
+
+```JSON
+{ "fanspeed": 10 }
+```
 
 ### <span id = "swing_mode">转向模式 swing_mode</span>
-- actions 接受值
-  - [ 'auto', 'on', 'off', 'horizon', 'horizon.off','vertical', 'vertical.off' ]
+
+- actions 接受值 [ "auto", "on", "off", "horizon", "horizon.off","vertical", "vertical.off" ]
+  - "auto": 自动模式
+  - "on": 打开转向模式
+  - "off": 关闭转向模式
+  - "horizon": 水平转向，左右转向
+  - "horizon.off": 关闭水平转向、关闭左右转向
+  - "vertical": 垂直转向、上下转向
+  - "vertical.off": 关闭垂直转向、上下转向
+
+```JSON
+{ "swing_mode": ["auto", "horizon", "vertical"] }
+```
+
 - state 值
   - {string}
-  - [ 'auto', 'on', 'off', 'horizon', 'horizon.off','vertical', 'vertical.off' ]
+  - actions 定义的能力对应的一个状态
+
+```JSON
+{ "swing_mode": "auto" }
+```
 
 ### <span id = "volume">音量 volume</span>
-- actions 接受值
-  - [ 'up', 'down', 'max', 'min', 'num' ]
+
+- actions 接受值 [ "up", "down", "max", "min", "num" ]
+  - "up": 调高，调大
+  - "down": 调低，调小
+  - "max": 调到最大
+  - "min": 调到最小
+  - "num": 调到指定数值
+
+```JSON
+{ "volume": ["up", "down", "mun"] }
+```
+
 - state 值
   - {number}
-  - 0 - 100
+  - 0 到 100 之间十进制数值
+  - 如果不能明确获取到具体数值，可以为空
+
+```JSON
+{ "volume": 10 }
+```
 
 ### <span id = "channel">频道 channel</span>
-- actions 接受值
-  - [ 'next', 'prev', 'random', 'num' ]
+
+- actions 接受值 [ "next", "prev", "random", "num" ]
+  - "next": 上一个频道
+  - "prev": 下一个频道
+  - "random": 随机频道
+  - "num": 指定频道
+
+```JSON
+{ "channel": ["next", "prev"] }
+```
+
 - state 值
   - {number}
   - 正整数
   - 如果不能明确获取到具体数值，可以为空
 
+```JSON
+{ "channel": 10 }
+```
+
 ### <span id = "humidity">湿度 humidity</span>
-- actions 接受值
-  - [ 'up', 'down', 'max', 'min', 'num' ]
+
+- actions 接受值 [ "up", "down", "max", "min", "num" ]
+  - "up": 调高
+  - "down": 调低
+  - "max": 调到最大
+  - "min": 调到最小
+  - "num": 调到指定数值
+
+```JSON
+{ "humidity": ["up", "down", "max", "min", "num"] }
+```
+
 - state 值
   - {number}
-  - 0 - 100
+  - 0 到 100 之间十进制数值
+  - 如果不能明确获取到具体数值，可以为空
+
+```JSON
+{ "humidity": 30 }
+```
 
 ### <span id = "temperature">温度 temperature</span>
-- actions 接受值
-  - [ 'up', 'down', 'max', 'min', 'num' ]
+
+- actions 接受值 [ "up", "down", "max", "min", "num" ]
+  - "up": 调高
+  - "down": 调低
+  - "max": 调到最大
+  - "min": 调到最小
+  - "num": 调到指定数值
+
+```JSON
+{ "temperature": ["up", "down"] }
+```
+
 - state 值
   - {number}
-  - 0 - 100
+  - 0 到 100 之间十进制数值
+  - 如果不能明确获取到具体数值，可以为空
+
+```JSON
+{ "temperature": 26 }
+```
 
 ### <span id = "ping">ping</span>
-- actions 接受值
-  - [ 'trigger' ]
+
+- actions 接受值 [ "trigger" ]
+  - ping 是设备提示的功能。
+  - 比如，智慧灯泡闪一下（打开关闭或者关闭打开，或者换颜色，改亮度），用来发现。
+  - 如果设备没有该能力，又支持开关，那么默认开关一下，用以提示。
+  - trigger 触发
+
+```JSON
+{ "ping": "trigger" }
+```
+
 - state 值
   - {Boolean}
   - 为空，不需要提供state
