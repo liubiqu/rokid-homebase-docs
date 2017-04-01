@@ -10,6 +10,7 @@
   * [HTTP RemoteDriver](connect/remote-driver.md)
   * [JSON-RPC over TCP](connect/json-rpc-over-tcp.md)
   * [SSDP Auto Discovery](connect/ssdp-auto-discovery.md)
+  * [Android Native Driver](connect/android-native-driver.md)
 * [调试工具](tools/README.md)
   * [命令行接口校验工具](tools/rhome.md)
   * [开发者驱动](tools/developer-driver.md)
