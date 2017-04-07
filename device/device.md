@@ -17,8 +17,8 @@
 
 - {String}
 - 设备唯一Id，用来标识一个设备，要具备唯一性
-- example: uuid 等
 
+Example: uuid 等
 ```
 "06d0dfe0-1123-11e7-93ae-92361f002671"
 ```
@@ -27,8 +27,8 @@
 
 - {String}
 - 设备名称
-- example
 
+Example:
 ```
 "智能灯泡"
 ```
@@ -38,8 +38,8 @@
 - {String}
 - 设备类型
 - [支持的设备类型](type.md)
-- example
 
+Example:
 ```
 "light"
 ```
@@ -49,8 +49,8 @@
 - {Object}
 - 一个智能设备具备的能力，如下面 example 所示，智能灯泡具备开关，调颜色，调亮度三个能力。
 - [设备能力定义](actions-and-state.md)
-- example
 
+Example:
 ```JSON
 {
   "switch":["on","off"],
@@ -64,7 +64,8 @@
 - {Object}
 - 设备当前状态
 - 与 [actions](#actions) 对应， actions 定义的设备能力对应的当前状态
-- example
+
+Example:
 
 state:
 ```JSON
@@ -95,8 +96,8 @@ actions:
 - {Object}
 - Option
 - 与设备有关的信息，允许自由定义和储存查询、控制设备等必需的信息
-- example
 
+Example:
 ```JSON
 {
   "hostname":"http://127.0.0.1",
