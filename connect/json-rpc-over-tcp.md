@@ -1,6 +1,6 @@
 ## 通讯协议
 
-基于 JSON-RPC 2.0 
+基于 JSON-RPC 2.0
 
 ## 连接过程
 
@@ -10,18 +10,28 @@
 - 设备端返回 连接状态， 如果连接失败 1s后 断开连接
 - 通过 JSON RPC 与设备进行数据交互
 
-## 指令：
-### 建立连接 connect
+## 指令
 
-- params
+### 建立连接 connect， 明文传输， 建立连接
+
+method:  `connect`
+
+params
+
   - deviceId
-  - appName
+  - sereverName
+  - time
+
+result
+
+  - deviceId 设备 GUID
+  - appId app 在 Rokid 的注册 id
 
 实例
 
 ```
---> {"jsonrpc": "2.0", "method": "connect", "params": { "deviceId": "foo", "appName": ""}}, "id": 1 }
-<-- {"jsonrpc": "2.0", "result": {"deviceId": ""}, "id": 1}
+--> {"jsonrpc": "2.0", "method": "connect", "params": { "deviceId": "device:aaa-bbb-ccc-ddd", "appId": "homebase.rokid.com"}}, "id": 1 }
+<-- {"jsonrpc": "2.0", "result": {"deviceId": "", "appId": ""}, "id": 1}
 ```
 
 ### method: list
@@ -30,8 +40,6 @@
   - userAuth
     - userId
     - userToken
-  - env
-
 
 ```
 --> {"jsonrpc": "2.0", "method": "list", "params": {"userAuth":{ "userId": "hello1234" }}, "id": 1}
