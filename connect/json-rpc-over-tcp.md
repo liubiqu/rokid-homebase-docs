@@ -16,7 +16,7 @@
 
 method:  `connect`
 
-params
+paramsg
 
   - deviceId
   - sereverName
