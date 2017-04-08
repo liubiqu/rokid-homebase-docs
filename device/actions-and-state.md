@@ -3,7 +3,8 @@
 - 设备能力 `actions`: 指的是智能设备具备的能力，比如智能灯泡具有开关、调颜色、调亮度的能力。
 - 设备状态 `state`: 指的是设备当前的状态，与定义的设备能力对应。
 - 设备能力接受值与状态值详见 [设备能力](#actions)
-- example
+
+Example:
 
 actions:
 ```JSON
@@ -49,6 +50,7 @@ state:
   - "off" : 关
   - "stop" : 暂停，停止
 
+Example:
 ```JSON
 { "switch": ["on", "off"] }
 ```
@@ -56,7 +58,9 @@ state:
 - state 值
   - {string}
   - actions 定义设备能力对应的状态
+  - 可以为 null
 
+Example:
 ```JSON
 { "switch":"on" }
 ```
@@ -67,6 +71,7 @@ state:
   - "random": 颜色随机值
   - "num": 指定颜色RGB值，例如蓝色RGB值为 0x00FF00
 
+Example:
 ```JSON
 { "color": ["num"] }
 ```
@@ -75,7 +80,9 @@ state:
   - {number}
   - RGB 十六进制数值
   - 0x000000 - 0xFFFFFF
+  - 可以为 null
 
+Example:
 ```JSON
 { "color": 65280 }
 ```
@@ -89,6 +96,7 @@ state:
   - "min": 调到最暗
   - "num": 调到 0 到 100 之间指定数值，若设备亮度范围更大，则需要自行转换。
 
+Example:
 ```JSON
 { "brightness": ["up", "down", "num"] }
 ```
@@ -96,7 +104,9 @@ state:
 - state 值
   - {number}
   - 0 到 100 之间十进制数值
+  - 可以为 null
 
+Example:
 ```JSON
 { "brightness": 68 }
 ```
@@ -114,6 +124,7 @@ state:
   - "energy": 省电模式
   - "sleep": 睡眠模式
 
+Example:
 ```JSON
 { "mode": ["auto", "cool", "heat", "fan"] }
 ```
@@ -121,7 +132,9 @@ state:
 - state 值
   - {string}
   - actions 定义能力对应的一个状态
+  - 可以为 null  
 
+Example:
 ```JSON
 { "mode": "auto" }
 ```
@@ -133,6 +146,7 @@ state:
   - "down": 如：窗帘关闭一点
   - "num": 如：窗帘打开/关闭到百分之几
 
+Example:
 ```JSON
 { "position": "num" }
 ```
@@ -142,6 +156,7 @@ state:
   - 0 到 100 之间十进制数值
   - 如果不能明确获取到具体数值，可以为 null
 
+Example:
 ```JSON
 { "position": 10 }
 ```
@@ -156,6 +171,7 @@ state:
   - "switch": 切换不同档位
   - "num": 调到指定数值
 
+Example:
 ```JSON
 { "fanspeed": ["up", "down", "num"] }
 ```
@@ -165,6 +181,7 @@ state:
   - 0 到 100 之间十进制数值
   - 如果不能明确获取到具体数值，可以为 null
 
+Example:
 ```JSON
 { "fanspeed": 10 }
 ```
@@ -180,6 +197,7 @@ state:
   - "vertical": 垂直转向、上下转向
   - "vertical.off": 关闭垂直转向、上下转向
 
+Example:
 ```JSON
 { "swing_mode": ["auto", "horizon", "vertical"] }
 ```
@@ -187,7 +205,9 @@ state:
 - state 值
   - {string}
   - actions 定义的能力对应的一个状态
+  - 可以为 null
 
+Example:
 ```JSON
 { "swing_mode": "auto" }
 ```
@@ -201,6 +221,7 @@ state:
   - "min": 调到最小
   - "num": 调到指定数值
 
+Example:
 ```JSON
 { "volume": ["up", "down", "mun"] }
 ```
@@ -210,6 +231,7 @@ state:
   - 0 到 100 之间十进制数值
   - 如果不能明确获取到具体数值，可以为 null
 
+Example:
 ```JSON
 { "volume": 10 }
 ```
@@ -222,6 +244,7 @@ state:
   - "random": 随机频道
   - "num": 指定频道
 
+Example:
 ```JSON
 { "channel": ["next", "prev"] }
 ```
@@ -231,6 +254,7 @@ state:
   - 正整数
   - 如果不能明确获取到具体数值，可以为 null
 
+Example:
 ```JSON
 { "channel": 10 }
 ```
@@ -244,6 +268,7 @@ state:
   - "min": 调到最小
   - "num": 调到指定数值
 
+Example:
 ```JSON
 { "humidity": ["up", "down", "max", "min", "num"] }
 ```
@@ -253,6 +278,7 @@ state:
   - 0 到 100 之间十进制数值
   - 如果不能明确获取到具体数值，可以为 null
 
+Example:
 ```JSON
 { "humidity": 30 }
 ```
@@ -266,6 +292,7 @@ state:
   - "min": 调到最小
   - "num": 调到指定数值
 
+Example:
 ```JSON
 { "temperature": ["up", "down"] }
 ```
@@ -275,6 +302,7 @@ state:
   - 0 到 100 之间十进制数值
   - 如果不能明确获取到具体数值，可以为 null
 
+Example:
 ```JSON
 { "temperature": 26 }
 ```
@@ -287,6 +315,7 @@ state:
   - 如果设备没有该能力，又支持开关，那么默认开关一下，用以提示。
   - trigger 触发
 
+Example:
 ```JSON
 { "ping": "trigger" }
 ```
