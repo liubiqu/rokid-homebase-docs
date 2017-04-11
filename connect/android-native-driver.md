@@ -1,6 +1,6 @@
-#Rokid Native Driver
+# Rokid Native Driver
 
-我们主要针对的是 第三方厂商 用的 sdk 或者 https请求开发 driver.如是其他方式,请联系 [smarthomeconnect](mailto:smarthomeconnect@rokid.com)
+我们主要针对的是**第三方厂商**用的 sdk. 如是其他方式,请联系 [Smart Home Connect](mailto:smarthomeconnect@rokid.com)
 Native Driver 驱动 作为 http server 实现 获取/控制 设备
 本文档主要用针对第三方开发者开发可运行在Rokid设备上提供智能家居服务。
 
@@ -50,6 +50,3 @@ Native Driver 驱动 作为 http server 实现 获取/控制 设备
 ```
 ![](../images/info.jpeg)
 ![](../images/readme.jpeg)
-
-
-
