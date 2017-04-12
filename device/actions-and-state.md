@@ -70,6 +70,7 @@ Example:
 - actions 接受值 [ "random", "num" ]
   - "random": 颜色随机值
   - "num": 指定颜色RGB值，例如蓝色RGB值为 0x00FF00
+  - 当设备同时支持调颜色和调亮度是，则亮度值将会整合在RGB中，因此RGB设备的调亮度能力不需要添加 brightness 的能力，只需添加 color 即可。如，RGB灯。
 
 Example:
 ```JSON
@@ -95,6 +96,7 @@ Example:
   - "max": 调到最亮
   - "min": 调到最暗
   - "num": 调到 0 到 100 之间指定数值，若设备亮度范围更大，则需要自行转换。
+  - 当设备支持RGB调颜色和调亮度时，不需要添加此能力。当设备不支持RGB调色，但支持调亮度时，则添加此能力。如，白光灯。
 
 Example:
 ```JSON
