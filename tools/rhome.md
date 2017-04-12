@@ -1,14 +1,20 @@
 # rhome
 
-develop tool for rokid homebase developer whicn can validate response data by json schema of list/get/execute interface, refered in rokid homebase open API.
+命令行接口检验工具
 
-## install
+## 功能
+
+- 调用 list|get|execute 接口。
+
+- 使用 jsonshema 对返回的数据格式进行校验，并指出具体错误信息。
+
+## 安装
 
 ```bash
 $ npm install -g rhome
 ```
 
-## usage
+## 使用
 
 ```
 $ rhome -h
@@ -39,14 +45,13 @@ Usage: rhome [options] [command]
     -l, --local    list local devices
 ```
 
-* `rhome` will create `rhome.json` file in your user root path for the first time, which can modify if necessary.
-* `add` is an interactive command. `name` must be only characters, numbers and underscore, e.g demo_1
-* other commands are command line mode.
-* `-b` show raw response body of list | get | execute.
-* `-l` list local devices of `rhome.json` listed before.
+* `rhome` 运行后，将在用户目录下新建 rhome.json 文件，保存 sessions、devices、currentSession 信息。如有必要，开发者可以进行修改。  
+* `add` 是交互式命令。 name 必须由`字母`、`数字`和`下划线`组成。例如: demo_1。 其余为命令行模式。
+* `sessions` 命令显示已添加的所有 session，和显示当前使用的 session。默认使用第一个 session，或通过 `use` 指定。
+* `-b` 显示 list | get | execute 的原始返回。
+* `-l` 显示 rhome.json 文件中的当前 session 下的所有设备。
 
-
-a simple sample of rhome:
+rhome demo:
 
 ```
 $ rhome add
@@ -63,11 +68,11 @@ $ rhome add
 }
 ```
 
-## validate data
+## 数据校验
 
-`rhome` validate response data by json schemas which show detail errors of data.
+`rhome` 将对返回数据进行校验，并显示具体的错误信息。
 
-* success response data
+* 数据格式正确
 
 ```
 $ rhome list
@@ -80,9 +85,9 @@ type: light
 offline: false
 ```
 
-* error response data
+* 数据格式错误
 
-In this case, you can check your errors of specific data shown in error message.
+如有错误，将会显示具体的错误信息，以供参考。
 
 ```
 $ rhome list

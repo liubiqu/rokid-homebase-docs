@@ -1,6 +1,6 @@
 ## developer driver
 
-- for http remote driver developer
+http remote driver 开发者工具
 
 ### 需要的参数
 - userAuth
@@ -16,7 +16,7 @@
 ### 开发者使用说明
 
 - 首先开发者要启动 http remote driver
-- 打开 `rokid app` ，进入 **智能家居**
+- 打开 `Rokid app` ，进入 **智能家居**
 - 点击右上角 **+** 号，进入 **新增智能设备** 页面后滑到最底部，点击下面空白处。
 
 ![](../images/developer_3.jpg)
