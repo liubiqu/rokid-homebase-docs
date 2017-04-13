@@ -1,6 +1,6 @@
-## Homebase TCP 通讯协议
+## Homebase TCP 通讯协议 [草稿]
 
-基于 JSON-RPC 2.0
+通讯基于 JSON-RPC 2.0，使用 TCP 短连接
 
 ## 连接过程
 
@@ -8,57 +8,96 @@
 - Homebase 建立与该端口的连接
 - Homebase 发送 TCP json-rpc call
 - TCP 驱动返回结果
-- 链接
+- 本次连接断开
 
 ## 指令
 
-### method: list
+### method: `list`
+
+获取设备列表
+
+输入参数
 
 - params
-  - userAuth
+  - {Object} userAuth
     - userId
     - userToken
+
+
+返回设备列表， 标准设备接口参考 [Homebase 设备][device]
+
+- {Array} result
+  - {String} deviceId
+  - {Object} deviceInfo
+  - {String} state
+  - actions
 
 ```
 --> {"jsonrpc": "2.0", "method": "list", "params": {"userAuth":{ "userId": "hello1234" }}, "id": 1}
-<-- {"jsonrpc": "2.0", "result": 200, "id": 1}
+<-- {"jsonrpc": "2.0", "result": [{"deviceId": "1", }], "id": 1}
 ```
 
-### method: get
+### method: `get`
+
+获取单个设备最新状态
+
+
+输入参数
 
 - params
-  - userAuth
+  - userAuth 可选
     - userId
     - userToken
   - device
-    - type
     - deviceId
     - deviceInfo
-  - env
+
+返回设备， 标准设备接口参考 [Homebase 设备][device]
+
+- result
+  - deviceId
+  - deviceInfo
+  - name
+  - type
+  - offline
+  - parent
+
+
 
 ```
 --> {"jsonrpc": "2.0", "method": "get", "params": {"userAuth":{ "userId": "hello1234", "userToken": "" }, "device": {"deviceId": "", deviceInfo: {}}}, "id": 1}
-<-- {"jsonrpc": "2.0", "result": 200, "id": 1}
+<-- {"jsonrpc": "2.0", "result": {"deviceId": "abc", "deviceInfo":{}, "name": "灯", "type": "light", "offline": false}, "id": 1}
 ```
 
-### method: execute
+### method: `execute`
 
 - params
   - userAuth
     - userId
     - userToken
-  - action
   - device
-    - deviceId  
+    - deviceId
+    - deviceInfo
     - state
+  - action
+    - property  eg: 'color'
+    - name  eg: 'num'
+    - value eg: 0xff0000
+
+方法返回设备最新状态
+
+- result
 
 ```
---> { "jsonrpc": "2.0", "method": "list", "params": {"userAuth":{ "userId": "hello1234" }}, "id": 1 }
-<-- { "jsonrpc": "2.0", "result": 200, "id": 1}
+--> { "jsonrpc": "2.0", "method": "list", "params": {"userAuth":{ "userId": "hello1234" }, "device": {"deviceId": "abc"}, "action": {"property": "switch", "name": "on"}}, "id": 1 }
+<-- { "jsonrpc": "2.0", "result": null, "id": 1}
 ```
 
-### method: command
+### method: `command`
 
 - params
   - method {String}
   - params {Object}
+
+
+[device]: ../device/device.md
