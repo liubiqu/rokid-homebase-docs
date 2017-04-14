@@ -9,9 +9,8 @@
 - 设备定时向 SSDP 广播 [alive](#ssdp-alive) 消息
 - 设备下线时， 向 SSDP 广播 [bye](#ssdp-bye) 消息
 
-SSDP 多播地址：239.255.255.250
-
-SSDP 广播端口：1900
+> SSDP 多播地址：239.255.255.250
+> SSDP 广播端口：1900
 
 ## 消息示例
 
@@ -105,5 +104,5 @@ HTTP 接口遵循 [json-rpc-over-tcp][json-rpc-over-tcp]
 
 
 
-[http-remote-driver]: ./http-remote-driver
-[json-rpc-over-tcp]: ./json-rpc-over-tcp
+[http-remote-driver]: ./http-remote-driver.md
+[json-rpc-over-tcp]: ./json-rpc-over-tcp.md
