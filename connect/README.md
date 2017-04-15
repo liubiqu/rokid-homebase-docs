@@ -7,4 +7,4 @@
 - [Native Driver](./android-native-driver) 安卓本地驱动格式
 
 
-![HomeBase 接入方式](https://s.rokidcdn.com/homebase/upload/Hkw-qV8px.png)
+![HomeBase 接入方式](https://s.rokidcdn.com/homebase/upload/HyK7mfkAl.png)
