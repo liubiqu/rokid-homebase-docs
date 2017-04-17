@@ -147,8 +147,7 @@ Object 设备最新状态对象：
 - device.deviceId  `{String}`, 厂商设备ID， 可以包含不可变数据， 与厂商ID一起，可以唯一确认一台设备
 - device.state  `{Object}`, 获取设备当前状态
 - device.userAuth `{Object}`, 用户授权信息
-- action `{Object}` 需要执行的操作， 参考文档 homebase.devices.v4.pdf
-
+- action `{Object}` 需要执行的操作， 参考文档 [actions and state][../device/actions-and-state.md]
 
 
 request
@@ -166,7 +165,8 @@ request
      }
   },
   "action": {
-    "switch": "on"
+    "property": "switch",
+    "name": "on"
   }
 }
 ```
@@ -324,16 +324,9 @@ returns result <Object>
 }
 ```
 
-### 关于 deviceId
-
-关于 deviceId， deviceId 用户存储一些在设备执行需要用到的设备识别参数， 我们建议将需要的参数序列化成字符串（比如， 通过 JSON ）， 在获取的时候反序列化，并拿到其中的参数
-
-deviceId 需要保持灵活性和可扩展性， 以便后续设备需要更多的信息。
-
-
 ### 如何描述你的设备？
 
-请参考： [设备定义][device] 
+请参考： [设备定义][device]
 
 
 [device]: ../device/device.md
