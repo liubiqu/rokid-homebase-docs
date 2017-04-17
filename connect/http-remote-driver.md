@@ -399,5 +399,5 @@ deviceId 需要保持灵活性和可扩展性， 以便后续设备需要更多�
 ```
 
 
-[device]: (../device/device.md)
-[rhome]: (../develop/rhome.md)
+[device]: ../device/device.md
+[rhome]: ../develop/rhome.md
