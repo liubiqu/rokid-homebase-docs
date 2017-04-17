@@ -1,4 +1,4 @@
-# HTTP Remtoe Driver
+# HTTP Remote Driver
 
 HTTP 远程驱动是接入 Homebase 推荐的方式， 本地 Android Native Driver， Rokid Skill 接入都使用 HTTP 的驱动协议，也是 SSDP 局域网发现的设备除了 TCP 控制协议之外的另外一种支持的协议。
 
