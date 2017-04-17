@@ -331,44 +331,9 @@ returns result <Object>
 deviceId 需要保持灵活性和可扩展性， 以便后续设备需要更多的信息。
 
 
-### 标准设备
+### 如何描述你的设备？
 
-标准设备是基于文档  homebase.devices.v4.pdf， 数据接口示例。
-
-```
-    {
-      "type": "light",
-      "state": {
-        "switch": "off",
-        "brightness": 60
-      },
-      "deviceId": "A3MAAABlADcWRzUzMTgxNA##2732##SL_LI_RGBW",
-      "name": "智能灯泡",
-      "vendor": "lifesmart",
-      "tags":["<type>", "卧室的灯"],
-      "accountId": 1,
-      "actions": {
-        "switch": ["on", "off"],
-        "color": ["random", "color"],
-        "brightness": ["up", "down", "max", "min", "num"]
-      }
-    }
-```
-
-
-- `type` 设备类型, `string`
-- `state` 设备状态对象, `object`
-- `actions` 支持的动作, `Object`
-- `accountId` 关联的厂商用户token ID, `number`
-- `vendor` 厂商ID, `string`
-- `name` 原始名称, `string`
-- `stat` 是否离线, `string "on"|"off"`
-- `deviceId` 厂商设备ID, `string`
-
-
-### 标准设备属性（propertyTypes）定义
-
-参考： [设备定义][device] 
+请参考： [设备定义][device] 
 
 
 [device]: ../device/device.md
