@@ -368,35 +368,7 @@ deviceId 需要保持灵活性和可扩展性， 以便后续设备需要更多�
 
 ### 标准设备属性（propertyTypes）定义
 
-设备属性像 Rokid 描述了被操控的设备具有什么样的功能，以及此功能的具体支持程度
-
-对象的 key 表示可以控制的物理量， 对象的值数组是对当前物理状态支持的控制值
-
-
-
-```
-{
-  "switch": ["on", "off", "value"],
-  "color": ["random", "value"],
-  "mode": [
-    {
-      name: 'auto',
-      label: '自动模式'，
-      description: "自动模式自动控制"
-    },
-    {
-      name: 'manual',
-      label: '手动模式'，
-      description: "手动控制"
-    },
-    {
-      name: 'sleep',
-      label: '睡眠模式'，
-      description: "自动模式自动控制"
-    }
-  ]
-}
-```
+参考： [设备定义][device] 
 
 
 [device]: ../device/device.md
