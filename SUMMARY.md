@@ -2,6 +2,7 @@
 
 * [介绍 HomeBase Stack](README.md)
 * [接入方式](connect/README.md)
+  * [Android Native Driver](connect/android-native-driver.md)
   * [HTTP RemoteDriver](connect/http-remote-driver.md)
   * [JSON-RPC over TCP](connect/json-rpc-over-tcp.md)
   * [SSDP Auto Discovery](connect/ssdp-auto-discovery.md)
