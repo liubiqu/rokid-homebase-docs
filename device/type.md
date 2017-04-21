@@ -20,3 +20,4 @@
 - `thermostat`: 调温器
 - `humidifier`: 加湿器
 - `door`: 门锁
+- `floorHeater`: 地暖
