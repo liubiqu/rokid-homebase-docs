@@ -20,7 +20,7 @@
 
 ### FAQ
 
-**Q: OAuth 返回的URL 参数可以自定义吗？**
+** Q: OAuth 返回的URL 参数可以自定义吗？**
 
 A: 可以自定义 userId, userToken, expireTime, refreshToken， 都可以使用自定义的名字。
 
