@@ -21,3 +21,5 @@
 - `humidifier`: 加湿器
 - `door`: 门锁
 - `floorHeater`: 地暖
+
+> 如果有需要添加新的设备类型， 请为我们 [提交 Issues](https://github.com/Rokid/rokid-homebase-docs/issues)
