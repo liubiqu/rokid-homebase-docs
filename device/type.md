@@ -22,4 +22,4 @@
 - `door`: 门锁
 - `floorHeater`: 地暖
 
-> 如果有需要添加新的设备类型， 请为我们 [提交 Issues](https://github.com/Rokid/rokid-homebase-docs/issues)
+> 如果上面类型无法满足需求， 需要添加新的设备类型， 请向我们 [提交 Issues](https://github.com/Rokid/rokid-homebase-docs/issues)
