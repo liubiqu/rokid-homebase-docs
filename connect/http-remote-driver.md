@@ -4,6 +4,14 @@ HTTP 远程驱动是接入 Homebase 推荐的方式， 本地 Android Native Dri
 
 你可以通过 开发者驱动， 或 [rhome 命令][rhome] 来开发和调试 HTTP Driver
 
+开发一个 HTTP 远程驱动你可能需要以下 4个接口
+
+
+- `/command` 用户处理一些用户授权，绑定，安装相关的命令
+- `/list` 获取设备列表
+- `/get` 获取设备详情
+- `/execute` 控制设备
+
 
 ## 通用格式
 
@@ -235,14 +243,24 @@ request sample
 
 command **OAuth**
 
+OAuth 授权方式必须提供 OAuth Command， 输入回调地址， 返回 OAuth 登陆地址
+
+- 返回的地址必须可以在浏览器里面打开
+- 地址里面包含 callbackURL ， 注意需要 encode
+- 用户授权完成， 需要重定向到 `callbackURL`, url 中添加 OAuthRefresh
+
 params:
 
-- authCallbackUrl 登录后回调页面
+- `callbackURL` 授权成功后的回调页面
 
 request
+
 ```json
 {
-  "authCallbackUrl": "http://foo/bar"
+  "command": "OAuth",
+  "params": {
+    "callbackURL": "https://homebase.rokid.com/bar?a=1"
+  }
 }
 
 ```
@@ -253,16 +271,19 @@ response
 ```json
 {
   "status": 0,
-  "data": "http://oauthurl"
+  "data": "https://oauth.yourbrand.com?redirect=http%3A%2F%2Fhomebase.rokid.com%2Fbar%3Fa%3D1"
 }
 ```
 
 command **OAuthRefresh**
 
+OAuth 授权方式必须要有， 输入回调地址， 返回 OAuth 登陆地址
+
 params:
 
-- userId 用户Id
-- userToken 用户Token
+- `userId` 用户Id
+- `userToken` 用户Token
+- `refreshToken` 用户的 refreshToken， 可选
 
 ```json
 {
