@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="ssdp-auto-discovery.html" />
+    <link rel="next" href="android-native-driver.html" />
     
     
-    <link rel="prev" href="oauth.html" />
+    <link rel="prev" href="ssdp-auto-discovery.html" />
     
 
     </head>
@@ -151,12 +151,12 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2.3" data-path="json-rpc-over-tcp.html">
+        <li class="chapter " data-level="1.2.3" data-path="ssdp-auto-discovery.html">
             
-                <a href="json-rpc-over-tcp.html">
+                <a href="ssdp-auto-discovery.html">
             
                     
-                    JSON-RPC over TCP
+                    SSDP Auto Discovery
             
                 </a>
             
@@ -164,12 +164,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.4" data-path="ssdp-auto-discovery.html">
+        <li class="chapter active" data-level="1.2.4" data-path="json-rpc-over-tcp.html">
             
-                <a href="ssdp-auto-discovery.html">
+                <a href="json-rpc-over-tcp.html">
             
                     
-                    SSDP Auto Discovery
+                    JSON-RPC over TCP
             
                 </a>
             
@@ -183,6 +183,19 @@
             
                     
                     Android Native Driver
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="errors.html">
+            
+                <a href="errors.html">
+            
+                    
+                    标准错误
             
                 </a>
             
@@ -410,7 +423,7 @@
 <p>&#x8F93;&#x5165;&#x53C2;&#x6570;</p>
 <ul>
 <li>params<ul>
-<li>userAuth &#x53EF;&#x9009;<ul>
+<li>userAuth&#xFF0C; &#x53EF;&#x9009;<ul>
 <li>userId</li>
 <li>userToken</li>
 </ul>
@@ -440,7 +453,7 @@
 </code></pre><h3 id="method-execute">method: <code>execute</code></h3>
 <ul>
 <li>params<ul>
-<li>userAuth<ul>
+<li>userAuth&#xFF0C; &#x53EF;&#x9009;<ul>
 <li>userId</li>
 <li>userToken</li>
 </ul>
@@ -460,12 +473,22 @@
 </ul>
 </li>
 </ul>
-<p>&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x8BBE;&#x5907;&#x6700;&#x65B0;&#x72B6;&#x6001;</p>
+<p>&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;</p>
 <ul>
-<li>result</li>
+<li>&#x53EF;&#x4EE5;&#x8FD4;&#x56DE;&#x8BBE;&#x5907;&#x6700;&#x65B0; state</li>
+<li><p>&#x8FD4;&#x56DE; null &#x4F1A;&#x89E6;&#x53D1;&#x4E00;&#x6B21; get &#x8BF7;&#x6C42;&#x6765;&#x66F4;&#x65B0;&#x6700;&#x65B0;&#x8BBE;&#x5907;&#x72B6;&#x6001;</p>
+</li>
+<li><p>result</p>
+</li>
 </ul>
-<pre><code>--&gt; { &quot;jsonrpc&quot;: &quot;2.0&quot;, &quot;method&quot;: &quot;list&quot;, &quot;params&quot;: {&quot;userAuth&quot;:{ &quot;userId&quot;: &quot;hello1234&quot; }, &quot;device&quot;: {&quot;deviceId&quot;: &quot;abc&quot;}, &quot;action&quot;: {&quot;property&quot;: &quot;switch&quot;, &quot;name&quot;: &quot;on&quot;}}, &quot;id&quot;: 1 }
-&lt;-- { &quot;jsonrpc&quot;: &quot;2.0&quot;, &quot;result&quot;: null, &quot;id&quot;: 1}
+<pre><code>--&gt; { &quot;jsonrpc&quot;: &quot;2.0&quot;, &quot;method&quot;: &quot;list&quot;, &quot;params&quot;: {&quot;userAuth&quot;:{ &quot;userId&quot;: &quot;hello1234&quot; }, &quot;device&quot;: {&quot;deviceId&quot;: &quot;abc&quot;}, &quot;action&quot;: {&quot;property&quot;: &quot;switch&quot;, &quot;name&quot;: &quot;on&quot;}}, &quot;id&quot;: &quot;1&quot; }
+
+
+// &#x8FD4;&#x56DE; null &#x4F1A;&#x89E6;&#x53D1;&#x4E00;&#x6B21; get &#x8BF7;&#x6C42;&#x6765;&#x66F4;&#x65B0;&#x6700;&#x65B0;&#x8BBE;&#x5907;&#x72B6;&#x6001;
+&lt;-- { &quot;jsonrpc&quot;: &quot;2.0&quot;, &quot;result&quot;: null, &quot;id&quot;: &quot;1&quot;}  
+
+// &#x8FD4;&#x56DE;&#x8BBE;&#x5907;&#x6700;&#x65B0; state, &#x53EF;&#x4EE5;&#x66F4;&#x65B0;&#x8BBE;&#x5907;&#x72B6;&#x6001;
+&lt;-- { &quot;jsonrpc&quot;: &quot;2.0&quot;, &quot;result&quot;: {&quot;switch&quot;: &quot;on&quot;}, &quot;id&quot;: &quot;1&quot;}
 </code></pre><h3 id="method-command">method: <code>command</code></h3>
 <ul>
 <li>params<ul>
@@ -501,12 +524,12 @@
 
             
                 
-                <a href="oauth.html" class="navigation navigation-prev " aria-label="Previous page: 智能家居 OAuth 授权">
+                <a href="ssdp-auto-discovery.html" class="navigation navigation-prev " aria-label="Previous page: SSDP Auto Discovery">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="ssdp-auto-discovery.html" class="navigation navigation-next " aria-label="Next page: SSDP Auto Discovery">
+                <a href="android-native-driver.html" class="navigation navigation-next " aria-label="Next page: Android Native Driver">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -517,7 +540,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"JSON-RPC over TCP","level":"1.2.3","depth":2,"next":{"title":"SSDP Auto Discovery","level":"1.2.4","depth":2,"path":"connect/ssdp-auto-discovery.md","ref":"connect/ssdp-auto-discovery.md","articles":[]},"previous":{"title":"智能家居 OAuth 授权","level":"1.2.2","depth":2,"path":"connect/oauth.md","ref":"connect/oauth.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"links":{"sidebar":{"Rokid":"https://www.rokid.com"},"sharing":{"google":null,"facebook":null,"twitter":null,"weibo":null,"all":null}},"gitbook":"*"},"file":{"path":"connect/json-rpc-over-tcp.md","mtime":"2017-04-13T10:50:47.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-27T14:51:32.428Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"JSON-RPC over TCP","level":"1.2.4","depth":2,"next":{"title":"Android Native Driver","level":"1.2.5","depth":2,"path":"connect/android-native-driver.md","ref":"connect/android-native-driver.md","articles":[]},"previous":{"title":"SSDP Auto Discovery","level":"1.2.3","depth":2,"path":"connect/ssdp-auto-discovery.md","ref":"connect/ssdp-auto-discovery.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"links":{"sidebar":{"Rokid":"https://www.rokid.com"},"sharing":{"google":null,"facebook":null,"twitter":null,"weibo":null,"all":null}},"gitbook":"*"},"file":{"path":"connect/json-rpc-over-tcp.md","mtime":"2017-05-01T02:27:28.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-05-03T11:13:23.870Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -45,7 +45,7 @@
 输入参数
 
 - params
-  - userAuth 可选
+  - userAuth， 可选
     - userId
     - userToken
   - device
@@ -72,7 +72,7 @@
 ### method: `execute`
 
 - params
-  - userAuth
+  - userAuth， 可选
     - userId
     - userToken
   - device
@@ -84,13 +84,22 @@
     - name  eg: 'num'
     - value eg: 0xff0000
 
-方法返回设备最新状态
+方法返回
+
+- 可以返回设备最新 state
+- 返回 null 会触发一次 get 请求来更新最新设备状态
 
 - result
 
 ```
---> { "jsonrpc": "2.0", "method": "list", "params": {"userAuth":{ "userId": "hello1234" }, "device": {"deviceId": "abc"}, "action": {"property": "switch", "name": "on"}}, "id": 1 }
-<-- { "jsonrpc": "2.0", "result": null, "id": 1}
+--> { "jsonrpc": "2.0", "method": "list", "params": {"userAuth":{ "userId": "hello1234" }, "device": {"deviceId": "abc"}, "action": {"property": "switch", "name": "on"}}, "id": "1" }
+
+
+// 返回 null 会触发一次 get 请求来更新最新设备状态
+<-- { "jsonrpc": "2.0", "result": null, "id": "1"}  
+
+// 返回设备最新 state, 可以更新设备状态
+<-- { "jsonrpc": "2.0", "result": {"switch": "on"}, "id": "1"}
 ```
 
 ### method: `command`

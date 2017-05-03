@@ -7,6 +7,7 @@
   * [SSDP Auto Discovery](connect/ssdp-auto-discovery.md)
   * [JSON-RPC over TCP](connect/json-rpc-over-tcp.md)
   * [Android Native Driver](connect/android-native-driver.md)
+  * [标准错误](connect/errors.md)
 * [设备描述](device/README.md)
   * [设备](device/device.md)
   * [设备类型](device/type.md)
