@@ -297,7 +297,7 @@ returns result <Object>
 - result.userId {可选}
 - result.userToken 新的用户Token
 - result.expiredTime 更新过期时间， 秒为单位， UTC 时间戳
-- result.refreshToken  可选， 更新 refrehToken
+- result.refreshToken  可选， 更新 refreshToken
 
 ```json
 {

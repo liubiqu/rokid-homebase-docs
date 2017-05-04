@@ -20,7 +20,7 @@
 - userId {可选}
 - userToken 新的用户Token
 - expiredTime 更新过期时间， 秒为单位， UTC 时间戳
-- refreshToken  可选， 更新 refrehToken
+- refreshToken  可选， 更新 refreshToken
 
 
 
