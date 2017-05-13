@@ -102,10 +102,12 @@ HTTP 远程驱动使用 JSON 作为数据交换格式， 执行成功会返回�
 
 ```json
 {
-  "deviceId": "xxx",
-  "userAuth": {
-    "userId": "",
-    "userToken": ""
+  "device" : {
+    "deviceId": "xxx",
+    "userAuth": {
+      "userId": "",
+      "userToken": ""
+    }
   }
 }
 ```
