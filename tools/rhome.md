@@ -11,7 +11,7 @@
 ## 安装
 
 ```bash
-$ npm install -g rhome
+$ npm install -g rokid-homebase-cli
 ```
 
 ## 使用
